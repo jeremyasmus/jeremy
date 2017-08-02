@@ -33,40 +33,6 @@
         a.appendChild(r);
     })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-<script>
-	// Tooltip
-
-$('button').tooltip({
-  trigger: 'click',
-  placement: 'bottom'
-});
-
-function setTooltip(message) {
-  $('button').tooltip('hide')
-    .attr('data-original-title', message)
-    .tooltip('show');
-}
-
-function hideTooltip() {
-  setTimeout(function() {
-    $('button').tooltip('hide');
-  }, 1000);
-}
-
-// Clipboard
-
-var clipboard = new Clipboard('button');
-
-clipboard.on('success', function(e) {
-  setTooltip('Copied!');
-  hideTooltip();
-});
-
-clipboard.on('error', function(e) {
-  setTooltip('Failed!');
-  hideTooltip();
-});
-</script>
        </head>
 
 <body>
@@ -152,6 +118,40 @@ clipboard.on('error', function(e) {
                   <p class="align-center">Copy the Lyft promo code below:</p>
                   <div class="promo-button" id="promo">LYFTDOJO</div>
                   <button onclick="copyToClipboard('#promo')" class="purple-button" style="margin-bottom: 10px" data-clipboard-text="1">COPY CODE</button>
+		  <script type="text/javascript">
+	// Tooltip
+
+$('button').tooltip({
+  trigger: 'click',
+  placement: 'bottom'
+});
+
+function setTooltip(message) {
+  $('button').tooltip('hide')
+    .attr('data-original-title', message)
+    .tooltip('show');
+}
+
+function hideTooltip() {
+  setTimeout(function() {
+    $('button').tooltip('hide');
+  }, 1000);
+}
+
+// Clipboard
+
+var clipboard = new Clipboard('button');
+
+clipboard.on('success', function(e) {
+  setTooltip('Copied!');
+  hideTooltip();
+});
+
+clipboard.on('error', function(e) {
+  setTooltip('Failed!');
+  hideTooltip();
+});
+</script>
                 </div>
               </div>
               <div id="content-c321639" class="csc-default" style="margin-top: 20px">
