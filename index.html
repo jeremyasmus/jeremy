@@ -6,6 +6,8 @@
        <link rel="icon" href="http://ridepromo.net/images/favicon.ico" type="image/x-icon; charset=binary">
        <link rel="stylesheet" type="text/css" href="css/template.css" media="all">
        <link rel="stylesheet" type="text/css" href="css/lyft.css" media="all">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
        <title>Enter LYFTDOJO - Lyft Promo Code - Get $50 free towards your first ride</title>
        <meta name="description" content="Lyft promo codes worth $50 off your first rides for free">
@@ -30,6 +32,40 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script>
+	// Tooltip
+
+$('button').tooltip({
+  trigger: 'click',
+  placement: 'bottom'
+});
+
+function setTooltip(message) {
+  $('button').tooltip('hide')
+    .attr('data-original-title', message)
+    .tooltip('show');
+}
+
+function hideTooltip() {
+  setTimeout(function() {
+    $('button').tooltip('hide');
+  }, 1000);
+}
+
+// Clipboard
+
+var clipboard = new Clipboard('button');
+
+clipboard.on('success', function(e) {
+  setTooltip('Copied!');
+  hideTooltip();
+});
+
+clipboard.on('error', function(e) {
+  setTooltip('Failed!');
+  hideTooltip();
+});
 </script>
        </head>
 
